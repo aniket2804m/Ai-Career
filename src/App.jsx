@@ -8,8 +8,8 @@ import Listing from "./Listing";
 import Footer from "./Footer";
 import ExploreListing from "./ExploreListing";
 import Contact from "./pages/Contact.jsx";
-import Home from "./pages/Home";
-import CourseDetail from "./pages/CourseDetail";
+import Home from "./pages/Home.jsx";
+import CourseDetail from "./pages/CourseDetail.jsx";
 
 import AdminLayout from "./pages/admin/AdminLayout";
 import UserLayout from "./pages/user/UserLayout";
