@@ -1,0 +1,29 @@
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block !important;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    flex-direction: column !important;
+    background: rgba(15,23,42,0.98);
+    padding: 16px;
+    display: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-menu.open {
+    display: flex !important;
+  }
+
+  .nav-menu a,
+  .nav-menu button {
+    width: 100%;
+    text-align: left;
+    padding: 12px;
+  }
+}
