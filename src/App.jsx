@@ -11,7 +11,7 @@ import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
 import CourseDetail from "./Pages/CourseDetail";
 
-import AdminLayout from "./Pages/admin/Adminlayout";
+import AdminLayout from "./Pages/admin/AdminLayout";
 import UserLayout from "./Pages/user/UserLayout";
 import AdminDashboard from "./Pages/admin/AdminDashboard";
 import ManageCourses from "./Pages/admin/ManageCourses";
@@ -30,7 +30,7 @@ import ChatBot from './components/ChatBot';
 import ScamDetector from "./Pages/ScamDetector";
 import Careers from "./components/Careers";
 import Apply from "./components/Apply";
-import RoadmapBuilder from "./components/Roadmapbuilder";
+import RoadmapBuilder from "./components/RoadmapBuilder";
 
 // ✅ FIX 1: MentorGroup backend model ki jagah GroupDashboard component import karo
 import MentorSetup from "./components/Mentor/Mentorsetup";
