@@ -7,7 +7,7 @@ import Login from "./Login";
 import Listing from "./Listing";
 import Footer from "./Footer";
 import ExploreListing from "./ExploreListing";
-import Contact from "./pages/Contact";
+import Contact from "./pages/Contact.jsx";
 import Home from "./pages/Home";
 import CourseDetail from "./pages/CourseDetail";
 
