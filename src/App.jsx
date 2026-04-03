@@ -11,7 +11,7 @@ import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
 import CourseDetail from "./Pages/CourseDetail";
 
-import AdminLayout from "./Pages/admin/AdminLayout";
+import AdminLayout from "./Pages/admin/Adminlayout";
 import UserLayout from "./Pages/user/UserLayout";
 import AdminDashboard from "./Pages/admin/AdminDashboard";
 import ManageCourses from "./Pages/admin/ManageCourses";
