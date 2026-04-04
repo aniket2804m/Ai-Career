@@ -30,12 +30,12 @@ import ChatBot from './components/ChatBot';
 import ScamDetector from "./pages/ScamDetector";
 import Careers from "./components/Careers";
 import Apply from "./components/Apply";
-import RoadmapBuilder from "./components/RoadmapBuilder";
+import RoadmapBuilder from "./components/RoadmapMaker.jsx";
 
 // ✅ FIX 1: MentorGroup backend model ki jagah GroupDashboard component import karo
-import MentorSetup from "./components/Mentor/Mentorsetup";
-import BrowseMentors from "./components/Mentor/Browsementors";
-import GroupDashboard from "./components/Mentor/Groupdashboard"; // ← ye file banani hai
+import MentorSetup from "./components/Mentor/MentorSetup.jsx";
+import BrowseMentors from "./components/Mentor/BrowseMentors.jsx";
+import GroupDashboard from "./components/Mentor/GroupDashboard.jsx"; // ← ye file banani hai
 
 import ResumeAtsCheck from "./components/ResumeAtsCheck";
 
