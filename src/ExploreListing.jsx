@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import EditListing from "./components/EditListing";
 import DeleteListing from "./components/DeleteListing";
-import API_BASE_URL from '../config/api.js';
+import API_BASE_URL from '../src/config/api.js';
 
 const ExploreListing = ({ search }) => {
   const role = localStorage.getItem("role");
