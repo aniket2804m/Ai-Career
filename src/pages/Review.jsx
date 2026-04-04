@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./../../public/course.css";
+import API_BASE_URL from '../src/config/api.js';
 
 const Review = ({ courseId }) => {
 
@@ -10,7 +11,7 @@ const Review = ({ courseId }) => {
 
   useEffect(() => {
 
-      axios.get(`http://localhost:5000/api/reviews/${courseId}`)
+      axios.get(`${API_BASE_URL}/api/reviews/${courseId}`)
       .then(res => setReviews(res.data));
     }, [courseId]);
 
@@ -19,7 +20,7 @@ const Review = ({ courseId }) => {
     try {
 
       const res = await axios.post(
-        "http://localhost:5000/api/reviews/creates",
+        `${API_BASE_URL}/api/reviews/creates`,
         {
           courseId,
           userName: "Author",

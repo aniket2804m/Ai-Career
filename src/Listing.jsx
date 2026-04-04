@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../public/style.css';
 import { useNavigate } from 'react-router-dom';
+import API_BASE_URL from '../src/config/api.js';
 
 const Listing = () => {
   const navigate = useNavigate();
@@ -46,7 +47,7 @@ const Listing = () => {
       });
 
       await axios.post(
-        "http://localhost:5000/api/listings/create",
+        `${API_BASE_URL}/api/listings/create`,
         formData,
         {
           headers: {

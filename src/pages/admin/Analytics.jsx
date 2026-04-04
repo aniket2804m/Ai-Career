@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
+import API_BASE_URL from '../src/config/api.js';
 
-const API = "http://localhost:5000/api/admin";
+const API = `${API_BASE_URL}/api/admin`;
 
 export default function Analytics() {
   const [data, setData] = useState(null);

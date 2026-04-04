@@ -1,8 +1,9 @@
 import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API_BASE_URL from '../src/config/api.js';
 
-const API = "http://localhost:5000/api/user";
+const API = `${API_BASE_URL}/api/user`;
 
 export default function EnrolledCourses() {
   const [courses, setCourses] = useState([]);

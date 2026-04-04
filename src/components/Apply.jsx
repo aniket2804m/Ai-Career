@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import API_BASE_URL from '../src/config/api.js';
 
 function Apply() {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ function Apply() {
 
     // API call karo
     try {
-      const res = await fetch("http://localhost:5000/api/apply", {
+      const res = await fetch(`${API_BASE_URL}/api/apply`, {
         method: "POST",
         body: formData,
       });

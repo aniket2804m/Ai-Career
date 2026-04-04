@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import EditListing from "./components/EditListing";
 import DeleteListing from "./components/DeleteListing";
+import API_BASE_URL from '../src/config/api.js';
 
 const ExploreListing = ({ search }) => {
   const role = localStorage.getItem("role");
@@ -25,7 +26,7 @@ const ExploreListing = ({ search }) => {
       if (minPrice) params.minPrice = minPrice;
       if (maxPrice) params.maxPrice = maxPrice;
       if (category && category !== "All") params.category = category;
-      const res = await axios.get("http://localhost:5000/api/listings", { params });
+      const res = await axios.get(`${API_BASE_URL}/api/listings`, { params });
       setListings(res.data);
     } catch (err) {
       console.log("Fetch Error:", err);

@@ -1,6 +1,7 @@
 import React from 'react'
 // import { useState } from 'react';
 import axios from 'axios';
+import API_BASE_URL from '../src/config/api.js';
 
 const DeleteListing = ({item, setListings}) => {
 
@@ -11,7 +12,7 @@ const DeleteListing = ({item, setListings}) => {
               try {
                 const token = localStorage.getItem("token");
     
-                await axios.delete(`http://localhost:5000/api/listings/${item._id}`,
+                await axios.delete(`${API_BASE_URL}/api/listings/${item._id}`,
                   {
                     headers: {
                       Authorization: `Bearer ${token}`,

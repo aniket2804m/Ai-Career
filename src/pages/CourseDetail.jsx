@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import API_BASE_URL from '../src/config/api.js';
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500&display=swap');
@@ -385,7 +386,7 @@ const CourseDetail = () => {
 
   const fetchDetail = useCallback(async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/listings/${id}`);
+      const res = await axios.get(`${API_BASE_URL}/api/listings/${id}`);
       setListing(res.data);
     } catch {
       setError("Course not found");
@@ -396,7 +397,7 @@ const CourseDetail = () => {
 
   const fetchReviews = useCallback(async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/reviews/${id}`);
+      const res = await axios.get(`${API_BASE_URL}/api/reviews/${id}`);
       setReviews(res.data);
     } catch (err) {
       console.log("Review fetch error:", err);
@@ -406,7 +407,7 @@ const CourseDetail = () => {
   const checkQuiz = useCallback(async () => {
     try {
       const headers = token ? { Authorization: `Bearer ${token}` } : {};
-      await axios.get(`http://localhost:5000/api/quiz/course/${id}`, { headers });
+      await axios.get(`${API_BASE_URL}/api/quiz/course/${id}`, { headers });
       setHasQuiz(true);
     } catch {
       setHasQuiz(false);
@@ -425,7 +426,7 @@ const CourseDetail = () => {
     if (!comment.trim()) { setError("Comment cannot be empty"); return; }
     try {
       await axios.post(
-        "http://localhost:5000/api/reviews/create",
+        `${API_BASE_URL}/api/reviews/create`,
         { listingId: id, comment, rating },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -439,7 +440,7 @@ const CourseDetail = () => {
 
   const deleteReview = async (reviewId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/reviews/${reviewId}`, {
+      await axios.delete(`${API_BASE_URL}/api/reviews/${reviewId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchReviews();

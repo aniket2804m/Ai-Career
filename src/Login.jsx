@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../public/style.css";
+import API_BASE_URL from '../src/config/api.js';
 
 const Login = ({ setRole }) => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const Login = ({ setRole }) => {
 
   const userLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/login", {
+      const response = await axios.post(`${API_BASE_URL}/api/auth/login`, {
         email,
         password,
       });

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../public/style.css";
 import { useNavigate } from "react-router-dom";
+import API_BASE_URL from '../src/config/api.js';
 
 const Register = () => {
 
@@ -17,7 +18,7 @@ const Register = () => {
   const userRgister = async() => {
     try {
 
-    await axios.post("http://localhost:5000/api/auth/register",{
+    await axios.post(`${API_BASE_URL}/api/auth/register`,{
         name,
         email, 
         password

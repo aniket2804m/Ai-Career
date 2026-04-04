@@ -1,8 +1,9 @@
 import { useState, useEffect, useCallback } from "react";
 // import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import API_BASE_URL from '../src/config/api.js';
 
-const API = "http://localhost:5000/api/quiz";
+const API = `${API_BASE_URL}/api/quiz`;
 
 export default function QuizReport() {
 //   const navigate = useNavigate();

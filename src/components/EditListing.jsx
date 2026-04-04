@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import API_BASE_URL from '../src/config/api.js';
 
 const EditListing = ({ item, setListings }) => {
 
@@ -46,7 +47,7 @@ const EditListing = ({ item, setListings }) => {
       });
 
       const res = await axios.put(
-        `http://localhost:5000/api/listings/${item._id}`,
+        `${API_BASE_URL}/api/listings/${item._id}`,
         formData,
         {
           headers: {

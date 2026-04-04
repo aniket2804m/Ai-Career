@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import API_BASE_URL from '../src/config/api.js';
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
@@ -14,7 +15,7 @@ const Contact = () => {
   }
 
   try {
-    const res = await fetch("http://localhost:5000/api/sendmsg", {
+    const res = await fetch(`${API_BASE_URL}/api/sendmsg`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

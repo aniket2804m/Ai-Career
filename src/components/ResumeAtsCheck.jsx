@@ -1,4 +1,5 @@
 import React, { useState, useRef, useCallback } from "react";
+import API_BASE_URL from '../src/config/api.js';
 
 /* ─── Styles ─────────────────────────────────────────────────────────────── */
 const styles = `
@@ -600,7 +601,7 @@ Rules:
         }
       ];
 
-      const res = await fetch("http://localhost:5000/api/claude", {
+      const res = await fetch(`${API_BASE_URL}/api/claude`, {
         method: "POST",
 
         body: JSON.stringify({

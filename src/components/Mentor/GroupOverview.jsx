@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API_BASE_URL from '../src/config/api.js';
 
-const API = "http://localhost:5000/api/mentor";
+const API = `${API_BASE_URL}/api/mentor`;
 
 export default function GroupDashboard() {
   const navigate = useNavigate();
