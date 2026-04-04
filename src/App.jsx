@@ -12,7 +12,7 @@ import Home from "./pages/Home.jsx";
 import CourseDetail from "./pages/CourseDetail.jsx";
 
 import AdminLayout from "./pages/admin/ComponentName.jsx";
-import UserLayout from "./pages/user/UserLayout";
+import UserLayout from "./pages/user/UserName.jsx";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import ManageCourses from "./pages/admin/ManageCourses";
 import ManageUsers from "./pages/admin/ManageUsers";
