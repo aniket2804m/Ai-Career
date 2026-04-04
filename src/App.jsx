@@ -11,7 +11,7 @@ import Contact from "./pages/Contact.jsx";
 import Home from "./pages/Home.jsx";
 import CourseDetail from "./pages/CourseDetail.jsx";
 
-import AdminLayout from "./pages/admin/AdminLayout";
+import AdminLayout from "./pages/admin/ComponentName.jsx";
 import UserLayout from "./pages/user/UserLayout";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import ManageCourses from "./pages/admin/ManageCourses";
