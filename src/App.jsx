@@ -33,9 +33,9 @@ import Apply from "./components/Apply";
 import RoadmapBuilder from "./components/RoadmapMaker.jsx";
 
 // ✅ FIX 1: MentorGroup backend model ki jagah GroupDashboard component import karo
-import MentorSetup from "./components/Mentor/MentorSetup.jsx";
-import BrowseMentors from "./components/Mentor/BrowseMentors.jsx";
-import GroupDashboard from "./components/Mentor/GroupDashboard.jsx"; // ← ye file banani hai
+import MentorSetup from "./components/Mentor/MentorProfileSetup.jsx";
+import BrowseMentors from "./components/Mentor/MentorList.jsx";
+import GroupDashboard from "./components/Mentor/GroupOverview.jsx"; // ← ye file banani hai
 
 import ResumeAtsCheck from "./components/ResumeAtsCheck";
 
