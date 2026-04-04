@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback } from "react";
-import API_BASE_URL from '../src/config/api.js';
+import API_BASE_URL from '../config/api.js';
 
 /* ─── Styles ─────────────────────────────────────────────────────────────── */
 const styles = `

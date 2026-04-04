@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./../../public/course.css";
-import API_BASE_URL from '../src/config/api.js';
+import API_BASE_URL from '../config/api.js';
 
 const Review = ({ courseId }) => {
 

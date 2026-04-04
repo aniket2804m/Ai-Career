@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import API_BASE_URL from '../src/config/api.js';
+import API_BASE_URL from '../config/api.js';
 
 const EditListing = ({ item, setListings }) => {
 

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import API_BASE_URL from '../src/config/api.js';
+import API_BASE_URL from '../../config/api.js';
 
 const API = `${API_BASE_URL}/api/quiz`;
 
