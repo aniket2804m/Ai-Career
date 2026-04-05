@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import API_BASE_URL from "../../config/api.js";
-
+import "../style/AdminDashboard.css";
 
 const API = `${API_BASE_URL}/api/admin`;
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
   const [stats, setStats] = useState({ courses: 0, users: 0, monthRevenue: 0, monthOrders: 0 });
+  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchStats();
@@ -31,6 +32,8 @@ export default function AdminDashboard() {
       });
     } catch (err) {
       console.error("Stats fetch error:", err);
+    } finally {
+      // setLoading(false);
     }
   };
 
@@ -42,37 +45,63 @@ export default function AdminDashboard() {
   ];
 
   return (
-    <div>
-      <div style={{ marginBottom: "28px" }}>
-        <h1 style={{ fontSize: "26px", fontWeight: "800", color: "#0f172a", margin: 0 }}>Admin Dashboard</h1>
-        <p style={{ color: "#64748b", marginTop: "4px", fontSize: "14px" }}>Welcome back! Here's your platform overview.</p>
+    <div className="admin-dashboard">
+      {/* Header */}
+      <div className="dashboard-header">
+        <div>
+          <h1 className="dashboard-title">Admin Dashboard</h1>
+          <p className="dashboard-subtitle">Welcome back! Here's your platform overview.</p>
+        </div>
       </div>
 
       {/* Stats Cards */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px", marginBottom: "28px" }}>
+      <div className="stats-grid">
         {statCards.map((stat) => (
-          <div key={stat.label} style={{ background: "#fff", borderRadius: "14px", padding: "22px", boxShadow: "0 1px 3px rgba(0,0,0,0.06)", border: "1px solid #e2e8f0" }}>
-            <div style={{ width: "44px", height: "44px", borderRadius: "10px", background: stat.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px", marginBottom: "12px" }}>{stat.icon}</div>
-            <div style={{ fontSize: "26px", fontWeight: "800", color: "#0f172a" }}>{stat.value}</div>
-            <div style={{ fontSize: "13px", color: "#64748b", marginTop: "2px" }}>{stat.label}</div>
+          <div key={stat.label} className="stat-card">
+            <div className="stat-icon" style={{ background: stat.bg }}>
+              {stat.icon}
+            </div>
+            <div className="stat-value">{stat.value}</div>
+            <div className="stat-label">{stat.label}</div>
           </div>
         ))}
       </div>
 
       {/* Quick Actions */}
-      <div style={{ background: "#fff", borderRadius: "14px", padding: "24px", boxShadow: "0 1px 3px rgba(0,0,0,0.06)", border: "1px solid #e2e8f0" }}>
-        <h2 style={{ fontSize: "16px", fontWeight: "700", color: "#0f172a", marginBottom: "16px" }}>Quick Actions</h2>
-        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+      <div className="quick-actions-container">
+        <h2 className="quick-actions-title">Quick Actions</h2>
+        <div className="quick-actions-grid">
           {[
-            { label: "Manage Courses", path: "/admin/courses", color: "#3b82f6" },
-            { label: "View All Users", path: "/admin/users", color: "#10b981" },
-            { label: "Revenue Report", path: "/admin/analytics", color: "#f59e0b" },
+            { label: "Manage Courses", path: "/admin/courses", color: "#3b82f6", icon: "📚" },
+            { label: "View All Users", path: "/admin/users", color: "#10b981", icon: "👥" },
+            { label: "Revenue Report", path: "/admin/analytics", color: "#f59e0b", icon: "📊" },
           ].map((btn) => (
-            <button key={btn.label} onClick={() => navigate(btn.path)}
-              style={{ padding: "10px 20px", borderRadius: "8px", border: "none", background: btn.color, color: "#fff", cursor: "pointer", fontWeight: "600", fontSize: "14px" }}>
+            <button 
+              key={btn.label} 
+              className="action-btn"
+              onClick={() => navigate(btn.path)}
+              style={{ "--btn-color": btn.color }}
+            >
+              <span className="action-icon">{btn.icon}</span>
               {btn.label}
             </button>
           ))}
+        </div>
+      </div>
+
+      {/* Info Cards */}
+      <div className="info-cards-grid">
+        <div className="info-card">
+          <h3>📈 Platform Growth</h3>
+          <p>Your platform is growing steadily with new courses and users every week.</p>
+        </div>
+        <div className="info-card">
+          <h3>🎯 Goals</h3>
+          <p>Keep track of your monthly goals and performance metrics.</p>
+        </div>
+        <div className="info-card">
+          <h3>⚙️ Settings</h3>
+          <p>Configure your admin preferences and manage platform settings.</p>
         </div>
       </div>
     </div>

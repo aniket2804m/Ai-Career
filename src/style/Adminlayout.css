@@ -1,0 +1,97 @@
+/* ============================================
+   ADMIN LAYOUT - RESPONSIVE CONTAINER
+   ============================================ */
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.admin-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* ========================================
+   MEDIA QUERIES
+   ======================================== */
+
+/* Desktop (1025px and above) */
+@media (min-width: 1025px) {
+  .admin-layout {
+    flex-direction: row;
+  }
+
+  .admin-content {
+    margin-left: 240px;
+  }
+}
+
+/* Tablet (769px - 1024px) */
+@media (max-width: 1024px) {
+  .admin-layout {
+    flex-direction: row;
+  }
+
+  .admin-content {
+    margin-left: 220px;
+  }
+}
+
+/* Small Tablet and Mobile (600px - 768px) */
+@media (max-width: 768px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .admin-content {
+    margin-left: 0;
+    padding-top: 0;
+  }
+}
+
+/* Mobile (375px - 599px) */
+@media (max-width: 599px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .admin-content {
+    width: 100%;
+  }
+}
+
+/* Extra Small Mobile (320px - 374px) */
+@media (max-width: 374px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .admin-content {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   SCROLLBAR STYLING
+   ======================================== */
+
+.admin-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.admin-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.admin-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
