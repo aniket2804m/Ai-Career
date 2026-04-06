@@ -4,12 +4,15 @@ html, body {
   height: 100%;
   /* min-height: 100vh; */
   margin: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 #root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: auto;
+  width: 100%;
+  max-width: 100%;
+  display: block;
 }
 
 /* Full page wrapper */
@@ -365,7 +368,7 @@ html, body {
   color: green;
 }
 
-.footer {
+.legacy-footer {
   background-color: #1e293b;
   color: white;
   text-align: center;
@@ -637,7 +640,7 @@ input, textarea{
     color: #00bcd4;
   }
 
-  .footer{
+  .legacy-footer{
     color: #00bcd4;
     background-color: blue;
   }

@@ -9,11 +9,19 @@
   color: #fff;
   font-family: 'Segoe UI', system-ui, sans-serif;
   margin-top: 60px;
+  position: static !important;
+  bottom: auto !important;
+  top: auto !important;
+  width: 100%;
+  flex-shrink: 0;
+  overflow-x: hidden;
 }
 
 /* Top Section Container */
 .footer-top {
   max-width: 1100px;
+  width: 100%;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 56px 24px 40px;
   display: grid;
@@ -156,6 +164,7 @@
   color: #94a3b8;
   font-size: 13px;
   line-height: 1.5;
+  word-break: break-word;
 }
 
 /* Stats Bar */
@@ -166,6 +175,8 @@
 
 .footer-stats {
   max-width: 1100px;
+  width: 100%;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 24px;
   display: grid;
@@ -192,6 +203,8 @@
 /* Bottom Bar */
 .footer-bottom {
   max-width: 1100px;
+  width: 100%;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 20px 24px;
   display: flex;

@@ -20,11 +20,47 @@ export default function UserSidebar() {
   };
 
   return (
-    <aside style={{
-      width: "240px", minHeight: "100vh", background: "#fafafa",
-      display: "flex", flexDirection: "column",
-      borderRight: "1px solid #e2e8f0", flexShrink: 0,
-    }}>
+    <>
+      <style>{`
+        .user-sidebar {
+          width: 240px;
+          min-height: 100vh;
+          background: #fafafa;
+          display: flex;
+          flex-direction: column;
+          border-right: 1px solid #e2e8f0;
+          flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+          .user-sidebar {
+            width: 100%;
+            min-height: auto;
+            border-right: none;
+            border-bottom: 1px solid #e2e8f0;
+          }
+
+          .user-sidebar-nav {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 12px;
+          }
+
+          .user-sidebar-nav::-webkit-scrollbar { height: 6px; }
+          .user-sidebar-nav::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 99px;
+          }
+
+          .user-sidebar-link {
+            margin-bottom: 0 !important;
+            white-space: nowrap;
+          }
+        }
+      `}</style>
+
+      <aside className="user-sidebar">
       {/* User Info */}
       <div style={{
         padding: "24px 20px", borderBottom: "1px solid #e2e8f0",
@@ -43,12 +79,13 @@ export default function UserSidebar() {
       </div>
 
       {/* Nav Links */}
-      <nav style={{ flex: 1, padding: "16px 12px" }}>
+      <nav className="user-sidebar-nav" style={{ flex: 1, padding: "16px 12px" }}>
         {navItems.map((item) => (
           <NavLink
             key={item.path}
             to={item.path}
             end={item.path === "/dashboard"}
+            className="user-sidebar-link"
             style={({ isActive }) => ({
               display: "flex", alignItems: "center", gap: "12px",
               padding: "11px 14px", borderRadius: "10px", marginBottom: "4px",
@@ -75,6 +112,7 @@ export default function UserSidebar() {
           🚪 Logout
         </button>
       </div>
-    </aside>
+      </aside>
+    </>
   );
 }

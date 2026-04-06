@@ -61,6 +61,7 @@ function App() {
     <>
       <Navbar role={role} setRole={setRole} search={search} setSearch={setSearch} />
 
+      <main style={{ minWidth: 0, overflowX: "hidden" }}>
       <Routes>
 
         {/* ── Public Routes ── */}
@@ -109,6 +110,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
 
       </Routes>
+      </main>
 
       <Footer />
       <ChatBot />
