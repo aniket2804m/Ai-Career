@@ -1,0 +1,1148 @@
+/* ============================================
+   HOME PAGE - RESPONSIVE & ATTRACTIVE STYLES
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+.home-container {
+  font-family: "'Segoe UI', system-ui, sans-serif";
+  overflow-x: hidden;
+}
+
+/* ========== HERO SECTION ========== */
+.hero-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 60px 24px;
+}
+
+.hero-bg-circles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-bg-circles .circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle-1 {
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+}
+
+.circle-2 {
+  bottom: -80px;
+  left: -80px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+}
+
+.hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero Left */
+.hero-left {
+  color: #fff;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 20px;
+  padding: 6px 16px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #a5b4fc;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6366f1;
+  display: inline-block;
+}
+
+.hero-title {
+  font-size: 52px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.15;
+  margin: 0 0 20px;
+  letter-spacing: -1px;
+}
+
+.hero-gradient {
+  display: block;
+  background: linear-gradient(90deg, #6366f1, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-desc {
+  color: #94a3b8;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 36px;
+  max-width: 480px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.btn {
+  padding: 15px 32px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.45);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Trust Badges */
+.trust-badges {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.badge-item {
+  text-align: left;
+}
+
+.badge-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.badge-label {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Hero Right */
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+.featured-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 32px;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 380px;
+}
+
+.featured-header {
+  font-size: 13px;
+  color: #6366f1;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.course-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.course-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(4px);
+}
+
+.course-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--course-color) 22%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.course-info {
+  flex: 1;
+}
+
+.course-title {
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.course-level {
+  color: #64748b;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.course-arrow {
+  font-size: 18px;
+}
+
+/* ========== WHO WE ARE SECTION ========== */
+.who-section {
+  padding: 80px 24px;
+  background: #fff;
+}
+
+.who-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.who-image {
+  position: relative;
+}
+
+.image-wrapper {
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  border-radius: 20px;
+  padding: 4px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  border-radius: 17px;
+  display: block;
+  object-fit: cover;
+  max-height: 380px;
+}
+
+.placeholder-icon {
+  width: 100%;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+}
+
+.experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e2e8f0;
+}
+
+.badge-num {
+  font-size: 22px;
+  font-weight: 800;
+  color: #6366f1;
+}
+
+.badge-text {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.who-text {
+  color: #0f172a;
+}
+
+.section-badge {
+  display: inline-block;
+  background: #ede9fe;
+  color: #6366f1;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+  margin: 0 0 20px;
+  letter-spacing: -0.5px;
+}
+
+.section-desc {
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 28px;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.feature-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #dcfce7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.feature-item span {
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ========== HOW IT WORKS SECTION ========== */
+.how-section {
+  padding: 80px 24px;
+  background: #f8fafc;
+}
+
+.how-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.section-header .section-badge {
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.section-header .section-title {
+  margin: 0;
+  font-size: 36px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.step-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.step-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+.step-number {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 42px;
+  font-weight: 900;
+  color: #f1f5f9;
+  line-height: 1;
+}
+
+.step-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.step-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.step-desc {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ========== TESTIMONIALS SECTION ========== */
+.testimonials-section {
+  padding: 80px 24px;
+  background: #fff;
+}
+
+.testimonials-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.testimonial-stars {
+  color: #f59e0b;
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.testimonial-text {
+  color: #374151;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.author-info {
+  flex: 1;
+}
+
+.author-name {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.author-role {
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* ========== CTA SECTION ========== */
+.cta-section {
+  padding: 80px 24px;
+  background: linear-gradient(135deg, #0f172a, #1e3a5f);
+}
+
+.cta-container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 16px;
+  letter-spacing: -0.5px;
+}
+
+.cta-desc {
+  color: #94a3b8;
+  font-size: 16px;
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ========================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet (769px - 1024px) */
+@media (max-width: 1024px) {
+  .hero-section {
+    padding: 48px 24px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+  }
+
+  .hero-right {
+    order: -1;
+  }
+
+  .who-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .step-card {
+    padding: 24px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-title {
+    font-size: 32px;
+  }
+}
+
+/* Small Tablet (600px - 768px) */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 40px 16px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    gap: 24px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .trust-badges {
+    gap: 16px;
+  }
+
+  .badge-value {
+    font-size: 18px;
+  }
+
+  .badge-label {
+    font-size: 11px;
+  }
+
+  .featured-card {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .featured-header {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .course-item {
+    padding: 12px;
+    margin-bottom: 8px;
+  }
+
+  .course-title {
+    font-size: 13px;
+  }
+
+  .course-level {
+    font-size: 11px;
+  }
+
+  /* Who We Are */
+  .who-section {
+    padding: 60px 16px;
+  }
+
+  .image-wrapper img {
+    max-height: 300px;
+  }
+
+  .experience-badge {
+    bottom: -15px;
+    right: -15px;
+    padding: 12px 14px;
+  }
+
+  .badge-num {
+    font-size: 18px;
+  }
+
+  .badge-text {
+    font-size: 11px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 14px;
+  }
+
+  .section-desc {
+    font-size: 14px;
+  }
+
+  .features-list {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .feature-check {
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+  }
+
+  .feature-item span {
+    font-size: 13px;
+  }
+
+  /* How It Works */
+  .how-section {
+    padding: 60px 16px;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .step-card {
+    padding: 20px;
+  }
+
+  .step-number {
+    font-size: 32px;
+  }
+
+  .step-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .step-title {
+    font-size: 16px;
+  }
+
+  .step-desc {
+    font-size: 13px;
+  }
+
+  /* Testimonials */
+  .testimonials-section {
+    padding: 60px 16px;
+  }
+
+  .testimonials-grid {
+    gap: 16px;
+  }
+
+  .testimonial-card {
+    padding: 20px;
+  }
+
+  .testimonial-text {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .author-name {
+    font-size: 13px;
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 60px 16px;
+  }
+
+  .cta-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .cta-desc {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+}
+
+/* Mobile (375px - 599px) */
+@media (max-width: 599px) {
+  .hero-section {
+    padding: 32px 12px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    gap: 20px;
+  }
+
+  .hero-badge {
+    padding: 5px 12px;
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .hero-desc {
+    font-size: 13px;
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 12px;
+    flex: 1 1 calc(50% - 4px);
+  }
+
+  .trust-badges {
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .badge-value {
+    font-size: 16px;
+  }
+
+  .badge-label {
+    font-size: 10px;
+  }
+
+  .featured-card {
+    padding: 20px;
+  }
+
+  .featured-header {
+    font-size: 11px;
+  }
+
+  .course-item {
+    padding: 10px;
+  }
+
+  .course-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .course-title {
+    font-size: 12px;
+  }
+
+  .course-arrow {
+    font-size: 16px;
+  }
+
+  /* Who We Are */
+  .who-section {
+    padding: 48px 12px;
+  }
+
+  .image-wrapper img {
+    max-height: 250px;
+  }
+
+  .experience-badge {
+    bottom: -12px;
+    right: -12px;
+    padding: 10px 12px;
+  }
+
+  .badge-num {
+    font-size: 16px;
+  }
+
+  .section-badge {
+    padding: 3px 10px;
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .section-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .features-list {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .feature-check {
+    width: 18px;
+    height: 18px;
+    font-size: 9px;
+  }
+
+  .feature-item span {
+    font-size: 12px;
+  }
+
+  /* How It Works */
+  .how-section {
+    padding: 48px 12px;
+  }
+
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .step-card {
+    padding: 18px;
+  }
+
+  .step-number {
+    font-size: 28px;
+  }
+
+  .step-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .step-title {
+    font-size: 14px;
+  }
+
+  .step-desc {
+    font-size: 12px;
+  }
+
+  /* Testimonials */
+  .testimonials-section {
+    padding: 48px 12px;
+  }
+
+  .testimonial-card {
+    padding: 16px;
+  }
+
+  .testimonial-stars {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .testimonial-text {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .author-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .author-name {
+    font-size: 12px;
+  }
+
+  .author-role {
+    font-size: 11px;
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 48px 12px;
+  }
+
+  .cta-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .cta-desc {
+    font-size: 13px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    flex: none;
+  }
+}
+
+/* Extra Small Mobile (320px - 374px) */
+@media (max-width: 374px) {
+  .hero-section {
+    padding: 24px 10px;
+  }
+
+  .hero-title {
+    font-size: 22px;
+  }
+
+  .hero-desc {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  .trust-badges {
+    gap: 10px;
+  }
+
+  .badge-value {
+    font-size: 14px;
+  }
+
+  .featured-card {
+    padding: 16px;
+  }
+
+  .course-item {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .course-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .who-section {
+    padding: 40px 10px;
+  }
+
+  .how-section {
+    padding: 40px 10px;
+  }
+
+  .testimonials-section {
+    padding: 40px 10px;
+  }
+
+  .cta-section {
+    padding: 40px 10px;
+  }
+
+  .cta-title {
+    font-size: 20px;
+  }
+
+  .cta-desc {
+    font-size: 12px;
+  }
+}
+
+/* ========================================
+   LANDSCAPE MODE
+   ======================================== */
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto;
+    padding: 24px 16px;
+  }
+
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .step-card {
+    padding: 16px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+}

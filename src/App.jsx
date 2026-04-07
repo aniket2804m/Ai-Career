@@ -65,12 +65,12 @@ function App() {
       <Routes>
 
         {/* ── Public Routes ── */}
-        <Route path="/" element={<ScamDetector />} />
+        <Route path="/scam" element={<ScamDetector />} />
         <Route path="/explore" element={<ExploreListing search={search} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login setRole={setRole} />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/apply" element={<Apply />} />
         <Route path="/create" element={<Listing />} />

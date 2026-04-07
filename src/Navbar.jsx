@@ -135,7 +135,7 @@ function Navbar({ role, setRole }) {
             >
               Resume ATS Check
             </Link>
-            <Link to="/" className="nav-link-hover" style={linkStyle("/")}>
+            <Link to="/scam" className="nav-link-hover" style={linkStyle("/")}>
               Scam Detector
             </Link>
             <Link
@@ -146,7 +146,7 @@ function Navbar({ role, setRole }) {
               Roadmap Builder
             </Link>
             <Link
-              to="/home"
+              to="/"
               className="nav-link-hover"
               style={linkStyle("/home")}
             >
