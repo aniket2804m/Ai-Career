@@ -4,5 +4,11 @@
   "installCommand": "npm install",
   "env": {
     "NODE_VERSION": "18.17.0"
-  }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
