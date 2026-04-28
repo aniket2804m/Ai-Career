@@ -10,7 +10,8 @@ const Listing = () => {
   const [success, setSuccess] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
+  // const [price, setPrice] = useState("");
+  const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
   const [amenities, setAmenities] = useState("");
 
@@ -36,7 +37,7 @@ const Listing = () => {
       const formData = new FormData();
       formData.append("title", title);
       formData.append("description", description);
-      formData.append("price", price);
+      formData.append("date", date);
       formData.append("location", location);
       formData.append("amenities", amenities);
 
@@ -67,13 +68,15 @@ const Listing = () => {
   return (
     <div className='auth-wrapper'>
       <div className='auth-container'>
-        <h2>ADD Course</h2>
+        <h2>ADD Report</h2>
         {error && <p className='error'>{error}</p>}
         {success && <p className='success'>{success}</p>}
 
-        <input type='text' placeholder='Enter Title' onChange={(e) => setTitle(e.target.value)} />
-        <input type='text' placeholder='Enter Description' onChange={(e) => setDescription(e.target.value)} />
-        <input type='number' placeholder='Enter Price' onChange={(e) => setPrice(e.target.value)} />
+        <input type='text' placeholder='Name' onChange={(e) => setTitle(e.target.value)} />
+        
+        <input type='date' placeholder='Date' onChange={(e) => setDate(e.target.value)} />
+
+        <input type='text' placeholder='Todays Report' onChange={(e) => setDescription(e.target.value)} />
         <input type='text' placeholder='Enter Location' onChange={(e) => setLocation(e.target.value)} />
         <input type='text' placeholder='Enter Amenities' onChange={(e) => setAmenities(e.target.value)} />
 

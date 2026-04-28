@@ -5,39 +5,34 @@ import API_BASE_URL from '../../config/api.js';
 const API = `${API_BASE_URL}/api/admin`;
 
 export default function Analytics() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const token = localStorage.getItem("token");
   const headers = { Authorization: `Bearer ${token}` };
 
   const fetchAnalytics = useCallback(async () => {
-    try {
-      const res = await axios.get(`${API}/analytics`, { headers });
-      setData(res.data);
-    } catch {
-      // Fallback mock data for display
-      setData({
-        totalRevenue: 284500,
-        monthRevenue: 84200,
-        totalOrders: 312,
-        monthOrders: 36,
-        topCourses: [
-          { title: "Full Stack React", sales: 48, revenue: 47952 },
-          { title: "Node.js Masterclass", sales: 36, revenue: 35964 },
-          { title: "Python for Beginners", sales: 62, revenue: 30938 },
-          { title: "MongoDB Bootcamp", sales: 29, revenue: 28971 },
-          { title: "DSA in JavaScript", sales: 44, revenue: 21956 },
-        ],
-        monthlyRevenue: [42000, 38000, 55000, 47000, 63000, 84200],
-        months: ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar"],
-      });
-    }
-  }, [headers]);
+  try {
+    const res = await axios.get(`${API}/report-analytics`, { headers });
+
+    const formatted = res.data.map(item => ({
+      name: `Month ${item._id.month}`,
+      reports: item.totalReports
+    }));
+
+    setData(formatted);
+
+  } catch (err) {
+    console.log(err);
+    setData([]); // important
+  }
+}, [headers]);
+  
+    
 
   useEffect(() => { fetchAnalytics(); }, [fetchAnalytics]);
 
   if (!data) return <div style={{ padding: "40px", textAlign: "center", color: "#64748b" }}>Loading analytics...</div>;
 
-  const maxBar = Math.max(...data.monthlyRevenue);
+  const maxBar = Math.max(...data.map(item => item.reports));
 
   return (
     <div style={{ fontFamily: "system-ui, sans-serif" }}>
@@ -67,20 +62,26 @@ export default function Analytics() {
         <div style={{ background: "#fff", borderRadius: "14px", padding: "24px", border: "1px solid #e2e8f0", boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
           <h3 style={{ fontSize: "15px", fontWeight: "700", color: "#0f172a", marginBottom: "20px" }}>Monthly Revenue</h3>
           <div style={{ display: "flex", alignItems: "flex-end", gap: "12px", height: "160px" }}>
-            {data.monthlyRevenue.map((val, i) => (
-              <div key={i} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}>
-                <div style={{ fontSize: "10px", color: "#64748b" }}>₹{(val / 1000).toFixed(0)}k</div>
-                <div style={{
-                  width: "100%", borderRadius: "6px 6px 0 0",
-                  background: i === data.monthlyRevenue.length - 1
-                    ? "linear-gradient(180deg, #3b82f6, #1d4ed8)"
-                    : "#bfdbfe",
-                  height: `${(val / maxBar) * 120}px`,
-                  transition: "all 0.3s",
-                }} />
-                <div style={{ fontSize: "11px", color: "#64748b" }}>{data.months[i]}</div>
-              </div>
-            ))}
+            {data.map((item, i) => (
+  <div key={i} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}>
+    
+    <div style={{ fontSize: "10px", color: "#64748b" }}>
+      {item.reports}
+    </div>
+
+    <div style={{
+      width: "100%",
+      borderRadius: "6px 6px 0 0",
+      background: "#3b82f6",
+      height: `${(item.reports / maxBar) * 120}px`,
+    }} />
+
+    <div style={{ fontSize: "11px", color: "#64748b" }}>
+      {item.name}
+    </div>
+
+  </div>
+))}
           </div>
         </div>
 
@@ -112,3 +113,4 @@ export default function Analytics() {
     </div>
   );
 }
+  
